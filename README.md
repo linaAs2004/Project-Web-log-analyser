@@ -85,11 +85,3 @@ Ce projet a pour objectif de développer une application web permettant d'analys
 - **Configuration de la base de données :** Créez une base de données MySQL ou MongoDB et mettez à jour les informations de connexion dans le fichier de configuration de l'application.
 - **Déploiement :** Déployez l'application sur le service Multipass selon les instructions fournies dans la documentation de Multipass.
 
-## Captures d'écran
-(Incluez ici des captures d'écran de l'application en action)
-
-## Contribuer
-Toute contribution au projet est la bienvenue. Vous pouvez ouvrir une pull request pour proposer des améliorations ou signaler des problèmes en ouvrant une issue.
-
-## Licence
-Ce projet est sous licence [MIT](LICENSE).
