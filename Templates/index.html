@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Ajouter des liens vers les CDN de Bootstrap pour le style -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ajouter des styles personnalisés */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 48px 0 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            background-color: #343a40;
+            color: #fff;
+            overflow-y: auto;
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .nav-link {
+            color: #adb5bd;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+        }
+
+        .nav-link.active {
+            color: #fff;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .dashboard-section {
+            margin-bottom: 30px;
+            margin-left: 50px;
+        }
+
+        .dashboard-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-section h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .sidebar h1 {
+            margin-bottom: 24px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>DASHBOARD</h1>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="#unique-visitors">Unique Visitors Per Day</a>
+            <a class="nav-link" href="#overall-requests">Overall Analyzed Requests</a>
+            <a class="nav-link" href="#requested-files">Requested files by urls</a>
+            <a class="nav-link" href="#static-requests">Static requests</a>
+            <a class="nav-link" href="#not-found-urls">Not found urls</a>
+            <a class="nav-link" href="#visitor-hostnames">Visitor Hostname and ips</a>
+            <a class="nav-link" href="#failed-connection-attempts">Failed connection attempts by ips</a>
+            <a class="nav-link" href="#failed-connection-by-country">Failed connection attempts by country</a>
+            <a class="nav-link" href="#http-status-codes">HTTP status codes</a>
+            <a class="nav-link" href="#operating-systems">Operating systems</a>
+            <a class="nav-link" href="#browsers">Browsers</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <!-- Overall Analyzed Requests -->
+        <div id="overall-requests" class="dashboard-section">
+            <h2>Overall Analyzed Requests</h2>
+            <table class="table">
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+                {% for key, value in formatted_data_oar.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <!-- Graphique Unique Visitors Per Day -->
+        <div id="unique-visitors" class="dashboard-section">
+            <h2>Unique Visitors Per Day</h2>
+            <img src="data:image/png;base64,{{ plot_uvph }}" alt="Unique Visitors Per Day">
+        </div>
+        <!-- Requested files by urls -->
+        <div id="requested-files" class="dashboard-section">
+            <h2>Requested files by urls</h2>
+            <img src="data:image/png;base64,{{ plot_rf }}" alt="requested_files">
+        </div>
+        <!-- Static requests -->
+        <div id="static-requests" class="dashboard-section">
+            <h2>Static requests</h2>
+            <img src="data:image/png;base64,{{ plot_sr }}" alt="static_requests">
+        </div>
+        <!-- Not found urls -->
+        <div id="not-found-urls" class="dashboard-section">
+            <h2>Not found urls</h2>
+            <img src="data:image/png;base64,{{ plot_nfu }}" alt="not_found_urls">
+        </div>
+        <!-- Visitor Hostname and ips -->
+        <div id="visitor-hostnames" class="dashboard-section">
+            <h2>Visitor Hostname and ips</h2>
+            <img src="data:image/png;base64,{{ plot_vhi }}" alt="Visitor_hostname_ips">
+        </div>
+        <!-- Failed connection attempts by ips -->
+        <div id="failed-connection-attempts" class="dashboard-section">
+            <h2>Failed connection attempts by ips</h2>
+            <img src="data:image/png;base64,{{ plot_fcai }}" alt="failed_connection_attempts">
+        </div> 
+        <!-- Failed connection attempts by country -->
+        <div id="failed-connection-by-country" class="dashboard-section">
+            <h2>Failed connection attempts by country</h2>
+            <!-- Section pour charger la carte -->
+            <iframe id="map-iframe" width="100%" height="600px" frameborder="0"></iframe>
+        </div>  
+        <!-- HTTP status codes -->
+        <div id="http-status-codes" class="dashboard-section">
+            <h2>HTTP status codes</h2>
+            <img src="data:image/png;base64,{{ plot_httpsc }}" alt="http_status_codes">
+        </div> 
+        <!-- Operating systems -->
+        <div id="operating-systems" class="dashboard-section">
+            <h2>Operating systems</h2>
+            <img src="data:image/png;base64,{{ plot_os }}" alt="operating_systems">
+        </div>
+        <!-- Browsers -->
+        <div id="browsers" class="dashboard-section">
+            <h2>Browsers</h2>
+            <img src="data:image/png;base64,{{ plot_br }}" alt="browsers">
+        </div>   
+    </div>
+    <!-- Ajout du script JavaScript pour charger la carte dans l'iframe -->
+    <script>
+        // Attend que le DOM soit chargé
+        document.addEventListener("DOMContentLoaded", function() {
+            // Récupère l'élément de l'iframe
+            var mapIframe = document.getElementById("map-iframe");
+    
+            // Met à jour la source de l'iframe pour charger la carte
+            mapIframe.src = "/map_fcai_c";
+        });
+    </script>
+</body>
+</html>
