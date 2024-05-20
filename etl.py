@@ -206,19 +206,19 @@ if __name__ == '__main__':
         cursor = connection.cursor()
 
         # Load SSH logs
-        ssh_path = 'D:/ESISA/3emeAnnee/py1/ProjetWEBLogs/DATA/Logs/secure-20220313'
+        ssh_path = 'C:/Users/HP/Desktop/Project-Web-log-analyser/DATA/Logs/secure-20220313'
         ssh_data = extract_ssh_logs(ssh_path)
         ssh_data_dict = {'ssh_logs': ssh_data}
         #print(ssh_data_dict)
 
         # Load Apache access logs
-        apache_access_path = 'D:/ESISA/3emeAnnee/py1/ProjetWEBLogs/DATA/Logs/access_log'
+        apache_access_path = 'C:/Users/HP/Desktop/Project-Web-log-analyser/DATA/Logs/access_log'
         apache_access_data = extract_apache_access_logs(apache_access_path)
         apache_access_data_dict = {'apache_access_logs': apache_access_data}
         #print(apache_access_data_dict)
 
         # Load Apache error logs
-        apache_error_path = 'D:/ESISA/3emeAnnee/py1/ProjetWEBLogs/DATA/Logs/error_log'
+        apache_error_path = 'C:/Users/HP/Desktop/Project-Web-log-analyser/DATA/Logs/error_log'
         apache_error_data = extract_apache_error_logs(apache_error_path)
         apache_error_data_dict = {'apache_error_logs': apache_error_data}
         #print(apache_error_data_dict)
