@@ -285,13 +285,8 @@ def plot_failed_connection_attempts(fcai_data):
 
 @app.route('/map_fcai_c')
 def show_map():
-    # Connexion à la base de données
     db_connection = get_db_connection()
-
-    # Création d'une instance de ServiceManager
     service = ServiceManager(db_connection)
-
-    # Récupération des données sur les tentatives de connexion échouées avec les pays
     fcai_c_data = service.get_FCAIC()
 
     # Création de la carte des tentatives de connexion échouées avec les pays

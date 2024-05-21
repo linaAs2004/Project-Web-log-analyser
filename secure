@@ -331,3 +331,28 @@ mysql.connector.errors.OperationalError: MySQL Connection not available
  * Running on http://127.0.0.1:5000
  * Running on http://172.27.241.125:5000
 2024-05-21 10:04:38,799 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-21 12:50:03,522 - DEBUG - This is a DEBUG message
+2024-05-21 12:50:03,522 - INFO - This is an INFO message
+2024-05-21 12:50:03,525 - WARNING - This is a WARNING message
+2024-05-21 12:50:03,527 - ERROR - This is an ERROR message
+2024-05-21 12:50:03,529 - CRITICAL - This is a CRITICAL message
+2024-05-21 12:50:03,538 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.27.241.125:5000
+2024-05-21 12:50:03,539 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-21 12:52:59,054 - DEBUG - This is a DEBUG message
+2024-05-21 12:52:59,054 - INFO - This is an INFO message
+2024-05-21 12:52:59,054 - WARNING - This is a WARNING message
+2024-05-21 12:52:59,070 - ERROR - This is an ERROR message
+2024-05-21 12:52:59,070 - CRITICAL - This is a CRITICAL message
+2024-05-21 12:52:59,105 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.11.104:5000
+2024-05-21 12:52:59,105 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-21 12:53:12,421 - INFO - Home page accessed
+2024-05-21 12:53:17,581 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-05-21 12:53:17,599 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-05-21 12:53:42,174 - INFO - 127.0.0.1 - - [21/May/2024 12:53:42] "GET / HTTP/1.1" 200 -
+2024-05-21 12:53:48,579 - INFO - 127.0.0.1 - - [21/May/2024 12:53:48] "GET /map_fcai_c HTTP/1.1" 200 -
