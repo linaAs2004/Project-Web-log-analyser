@@ -108,18 +108,18 @@ python3 /home/ubuntu/ProjetWebLogAnalyser/Controller.py
    10. ** cd /etc/systemd/system : Pour naviguer ver ce repertoire
    11. ** sudo su ---> touch /etc/systemd/system/flask_app.service
                   ---> nano /etc/systemd/system/flask_app.service
+       
                         [Unit]
                         Description=Web logs analyser app
                         After=network.target
-
                         [Service]
                         User=ubuntu
                         WorkingDirectory=/home/ubuntu/ProjetWebLogAnalyser
-                        ExecStart=/home/ubuntu/ProjetWebLogAnalyser/myenv/bin/python3                                                                 /home/ubuntu/ProjetWebLogAnalyser/Controller.py
+                        ExecStart=/home/ubuntu/ProjetWebLogAnalyser/myenv/bin/python3                                                /home/ubuntu/ProjetWebLogAnalyser/Controller.py
                         Restart=always
-                        
                         [Install]
                         WantedBy=multi-user.target
+       
        12. ** ctrl¨d : pour sortir
        13. ** sudo systemctl daemon-reload
        14. ** sudo systemctl enable flask_app.service
