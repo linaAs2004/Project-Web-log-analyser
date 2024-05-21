@@ -120,17 +120,16 @@ Créez une instance Multipass et montez le répertoire de votre projet :
                         Restart=always
                         [Install]
                         WantedBy=multi-user.target
-
    12. **ctrl¨d** :   pour sortir  
-    13. **sudo systemctl daemon-reload**  
-    14. **sudo systemctl enable flask_app.service**  
-    15. **sudo systemctl start flask_app.service**  
-    16. **sudo systemctl status flask_app.service**  
-    17. **cd /home/ubuntu/ProjetWebLogAnalyser**  
-    18. **sudo apt update**  
-    19. **sudo apt install python3-flask python3-mysql.connector python3-matplotlib python3-geoip2 python3-folium -y**  
-    20. **ls** = Controller.py  Dao.py     Templates    etl.py           flask_app.log         map.py  pays.py  services.py DATA  README.md  __pycache__  fcai_c_map.html  flask_app_backup.log  myenv   secure   start_app.sh  
-    21. **python3 Controller.py** :   Pour enfin lancer l'application sur le navigateur.  
+   13. **sudo systemctl daemon-reload**  
+   14. **sudo systemctl enable flask_app.service**  
+   15. **sudo systemctl start flask_app.service**  
+   16. **sudo systemctl status flask_app.service**  
+   17. **cd /home/ubuntu/ProjetWebLogAnalyser**  
+   18. **sudo apt update**  
+   19. **sudo apt install python3-flask python3-mysql.connector python3-matplotlib python3-geoip2 python3-folium -y**  
+   20. **ls** = Controller.py  Dao.py     Templates    etl.py           flask_app.log         map.py  pays.py  services.py DATA  README.md  __pycache__  fcai_c_map.html  flask_app_backup.log  myenv   secure   start_app.sh  
+   21. **python3 Controller.py** :   Pour enfin lancer l'application sur le navigateur.  
            
 
 
