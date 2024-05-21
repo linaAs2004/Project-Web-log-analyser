@@ -103,8 +103,9 @@ Création du répértoire portant le projet en le montant sur l'instance primary
      6. ** ls : Voila le resultat = Controller.py  Dao.py     Templates    etl.py    map.py  pays.py  services.py  DATA   README.md  __pycache__  fcai_c_map.html  secure
      7. ** python3 -m venv myenv : Pour créer un environnement virtuelle
      8. ** source myenv/bin/activate :  Pour rentrer dans l'environnement virtuelle
-     9. ** nano start_app.sh :  qui continent = source /home/ubuntu/ProjetWebLogAnalyser/myenv/bin/activate
-python3 /home/ubuntu/ProjetWebLogAnalyser/Controller.py
+     9. ** nano start_app.sh :  Créez un script de démarrage contenant les commandes pour démarrer votre application =
+      source /home/ubuntu/ProjetWebLogAnalyser/myenv/bin/activate
+      python3 /home/ubuntu/ProjetWebLogAnalyser/Controller.py
    10. ** cd /etc/systemd/system : Pour naviguer ver ce repertoire
    11. ** sudo su ---> touch /etc/systemd/system/flask_app.service
                   ---> nano /etc/systemd/system/flask_app.service
