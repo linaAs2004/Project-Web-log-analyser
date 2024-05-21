@@ -356,3 +356,18 @@ mysql.connector.errors.OperationalError: MySQL Connection not available
 2024-05-21 12:53:17,599 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 2024-05-21 12:53:42,174 - INFO - 127.0.0.1 - - [21/May/2024 12:53:42] "GET / HTTP/1.1" 200 -
 2024-05-21 12:53:48,579 - INFO - 127.0.0.1 - - [21/May/2024 12:53:48] "GET /map_fcai_c HTTP/1.1" 200 -
+2024-05-21 12:55:57,082 - DEBUG - This is a DEBUG message
+2024-05-21 12:55:57,083 - INFO - This is an INFO message
+2024-05-21 12:55:57,086 - WARNING - This is a WARNING message
+2024-05-21 12:55:57,089 - ERROR - This is an ERROR message
+2024-05-21 12:55:57,092 - CRITICAL - This is a CRITICAL message
+2024-05-21 12:55:57,103 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.27.241.125:5000
+2024-05-21 12:55:57,105 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-21 12:56:05,310 - INFO - Home page accessed
+2024-05-21 12:56:10,682 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-05-21 12:56:10,687 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-05-21 12:56:35,613 - INFO - 127.0.0.1 - - [21/May/2024 12:56:35] "GET / HTTP/1.1" 200 -
+2024-05-21 12:56:41,031 - INFO - 127.0.0.1 - - [21/May/2024 12:56:41] "GET /map_fcai_c HTTP/1.1" 200 -
