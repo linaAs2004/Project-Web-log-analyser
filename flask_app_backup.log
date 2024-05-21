@@ -1,0 +1,10 @@
+2024-05-21 10:03:12,060 - flask_app - DEBUG - This is a DEBUG message
+2024-05-21 10:03:12,060 - flask_app - INFO - This is an INFO message
+2024-05-21 10:03:12,062 - flask_app - WARNING - This is a WARNING message
+2024-05-21 10:03:12,064 - flask_app - ERROR - This is an ERROR message
+2024-05-21 10:03:12,067 - flask_app - CRITICAL - This is a CRITICAL message
+2024-05-21 10:04:38,784 - flask_app - DEBUG - This is a DEBUG message
+2024-05-21 10:04:38,784 - flask_app - INFO - This is an INFO message
+2024-05-21 10:04:38,786 - flask_app - WARNING - This is a WARNING message
+2024-05-21 10:04:38,788 - flask_app - ERROR - This is an ERROR message
+2024-05-21 10:04:38,790 - flask_app - CRITICAL - This is a CRITICAL message

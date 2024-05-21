@@ -7,9 +7,37 @@ import base64
 import ipaddress
 import matplotlib.patches as mpatches
 from map import plot_failed_connection_attempts_with_country
-
+import logging
+import logging.handlers
 
 app = Flask(__name__)
+
+from logging.handlers import SysLogHandler, RotatingFileHandler
+
+# Configuration du logger
+logger = logging.getLogger("flask_app")
+logger.setLevel(logging.DEBUG)  # Définir le niveau à DEBUG pour capturer tous les messages
+
+# Handler Syslog
+syslog_handler = SysLogHandler(address=("172.18.154.21", 514))
+syslog_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+syslog_handler.setFormatter(syslog_formatter)
+logger.addHandler(syslog_handler)
+
+# Handler de fichier de sauvegarde avec chemin absolu
+file_handler = RotatingFileHandler("/home/ubuntu/ProjetWebLogAnalyser/flask_app_backup.log", maxBytes=2000, backupCount=10)
+file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+file_handler.setFormatter(file_formatter)
+logger.addHandler(file_handler)
+
+# Messages de test
+logger.debug("This is a DEBUG message")
+logger.info("This is an INFO message")
+logger.warning("This is a WARNING message")
+logger.error("This is an ERROR message")
+logger.critical("This is a CRITICAL message")
+
+
 plt.switch_backend('agg')
 
 def get_db_connection():
@@ -31,6 +59,7 @@ def create_plot(figure):
 
 @app.route('/')
 def index():
+    app.logger.info("Home page accessed")
     db_connection = get_db_connection()
     service = ServiceManager(db_connection)
     
@@ -315,4 +344,4 @@ def plot_browsers(br_data):
         return create_plot(fig)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0')
