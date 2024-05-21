@@ -94,21 +94,21 @@ Ce projet a pour objectif de développer une application web permettant d'analys
 ### 1. Créer et monter le répertoire du projet
 
 Créez une instance Multipass et montez le répertoire de votre projet :
-   1. ** multipass launch --name primary --mount C:/Users/HP/Desktop/Project-Web-log-analyser:/home/ubuntu/ProjetWebLogAnalyser
+   1. ** multipass launch --name primary --mount C:/Users/HP/Desktop/Project-Web-log-analyser:/home/ubuntu/ProjetWebLogAnalyser**
 Création du répértoire portant le projet en le montant sur l'instance primary
-     2. ** Multipass list : Pour checker si l'instance est créer.
-     3. ** Multipass shell primary : Lancement de l'instance primary.
-     4. ** ls : Pour checker si le dossier a bien été monter. 
-     5. "" cd ProjetWebLogAnalyser : Pour rentrer dans le repertoire.
-     6. ** ls : Voila le resultat = Controller.py  Dao.py     Templates    etl.py    map.py  pays.py  services.py  DATA   README.md  __pycache__  fcai_c_map.html  secure
-     7. ** python3 -m venv myenv : Pour créer un environnement virtuelle
-     8. ** source myenv/bin/activate :  Pour rentrer dans l'environnement virtuelle
-     9. ** nano start_app.sh :  Créez un script de démarrage contenant les commandes pour démarrer votre application =
+     2. **Multipass list**: Pour checker si l'instance est créer.
+     3. **Multipass shell primary**: Lancement de l'instance primary.
+     4. **ls**: Pour checker si le dossier a bien été monter. 
+     5. **cd ProjetWebLogAnalyser**: Pour rentrer dans le repertoire.
+     6. **ls**: Voila le resultat = Controller.py  Dao.py     Templates    etl.py    map.py  pays.py  services.py  DATA   README.md  __pycache__  fcai_c_map.html  secure
+     7. **python3 -m venv myenv**: Pour créer un environnement virtuelle
+     8. **source myenv/bin/activate**:  Pour rentrer dans l'environnement virtuelle
+     9. **nano start_app.sh**:  Créez un script de démarrage contenant les commandes pour démarrer votre application =
       source /home/ubuntu/ProjetWebLogAnalyser/myenv/bin/activate
       python3 /home/ubuntu/ProjetWebLogAnalyser/Controller.py
-   10. ** cd /etc/systemd/system : Pour naviguer ver ce repertoire
-   11. ** sudo su ---> touch /etc/systemd/system/flask_app.service
-                  ---> nano /etc/systemd/system/flask_app.service
+   10. **cd /etc/systemd/system** : Pour naviguer ver ce repertoire
+   11. **sudo su**  ---> **touch /etc/systemd/system/flask_app.service**
+                    ---> **nano /etc/systemd/system/flask_app.service**
        
                         [Unit]
                         Description=Web logs analyser app
@@ -121,16 +121,16 @@ Création du répértoire portant le projet en le montant sur l'instance primary
                         [Install]
                         WantedBy=multi-user.target
        
-       12. ** ctrl¨d : pour sortir
-       13. ** sudo systemctl daemon-reload
-       14. ** sudo systemctl enable flask_app.service
-       15. ** sudo systemctl start flask_app.service
-       16. ** sudo systemctl status flask_app.service
-       17. ** cd /home/ubuntu/ProjetWebLogAnalyser
-       18. ** sudo apt update
-       19. ** sudo apt install python3-flask python3-mysql.connector python3-matplotlib python3-geoip2 python3-folium -y
-       20. ** ls = Controller.py  Dao.py     Templates    etl.py           flask_app.log         map.py  pays.py  services.py DATA  README.md  __pycache__  fcai_c_map.html  flask_app_backup.log  myenv   secure   start_app.sh
-       21.  python3 Controller.py : Pour enfin lancer l'application sur le navigateur.
+       12. **ctrl¨d** : pour sortir
+       13. **sudo systemctl daemon-reload**
+       14. **sudo systemctl enable flask_app.service**
+       15. **sudo systemctl start flask_app.service**
+       16. **sudo systemctl status flask_app.service**
+       17. **cd /home/ubuntu/ProjetWebLogAnalyser**
+       18. **sudo apt update**
+       19. **sudo apt install python3-flask python3-mysql.connector python3-matplotlib python3-geoip2 python3-folium -y**
+       20. **ls** = Controller.py  Dao.py     Templates    etl.py           flask_app.log         map.py  pays.py  services.py DATA  README.md  __pycache__  fcai_c_map.html  flask_app_backup.log  myenv   secure   start_app.sh
+       21. **python3 Controller.py** : Pour enfin lancer l'application sur le navigateur.
            
 
 
