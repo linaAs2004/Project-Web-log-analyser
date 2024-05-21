@@ -14,9 +14,7 @@ Ce projet vise à créer une application web Flask pour l'analyse des logs des s
 3. [Fonctionnalités](#fonctionnalités)
 4. [Technologies utilisées](#technologies-utilisées)
 5. [Configuration et déploiement](#configuration-et-déploiement)
-6. [Captures d'écran](#captures-décran)
-7. [Contribuer](#contribuer)
-8. [Licence](#licence)
+
 
 ## Introduction
 Ce projet a pour objectif de développer une application web permettant d'analyser les logs des services Internet, en fournissant des graphes résultants des analyses éfféctuées.
